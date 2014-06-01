@@ -115,6 +115,21 @@ plt.show()
 plt.savefig("plot2.png")
 plt.close()
 
+# Berechnung des Anstiegs
+deltaU=700-340
+print "Aufgabenteil A:"
+print "delta U:"
+print deltaU
+Iunten=m*340+b
+print "I340:"
+print I340
+Ioben=m*700+b
+print "I700:"
+print I700
+mPro=(((Ioben/Iunten)-1)*100)/(deltaU/100)
+print "m in Prozent/100V"
+print mPro
+
 
 #plt.plot(x,x*m.n+b.n)
 
