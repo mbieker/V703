@@ -80,13 +80,21 @@ def lin_reg(x,y):
     
     
 # Auswertung Teil A
+
 # Messwerte einlesen
 t, n, u, i = loadtxt("dataA.txt", unpack=True)
+
 # Relevante Werte berechnen
 sigman = n**(0.5)
 sigmaI = sigman/t
 I = n/t
-sigmaIrel = sigmaI/I
+intens=array([ufloat(I[i],sigmaI[i]) for i in range(21)])
+sigmaIrel = sigmaI*100/I
+
+# Erste Tabelle erstellen
+print "Tabelle 1:"
+data=array([u,n,t,intens,sigmaIrel]).T
+print make_LaTeX_table(data,[r'U[V]', r'N', r't[s]', r'$I\left[\frac{1}{s}\right]$', r'$\sigma_{I,rel}$[\%]'], flip= 'false', onedim = 'false')
 
 # Erster Plot
 plt.xlim(290,710)
@@ -100,17 +108,21 @@ plt.savefig("plot1.png")
 plt.close()
 
 # Zweiter Plot (Regressionsgerade)
+
+# Arrays mit benoetigten Werten erstellen:
 u2=u[2:] 
 I2=I[2:]
 sigmaI2=sigmaI[2:]
+
+# Lineare Regression
 m,b = lin_reg(u2,I2)
 
-plt.xlim(300,710)
+plt.xlim(335,710)
 plt.xlabel('Zaehlrohrspannung U[V]')
 plt.ylabel('Impulsrate I [1/s]')
 plt.errorbar(u2,I2,yerr=sigmaI2,xerr=None,fmt=None,ecolor='red')
 plt.plot(u2,I2,'.')
-plt.plot(x,x*m.n+b.n)
+plt.plot(u2,u2*m.n+b.n)
 plt.show()
 plt.savefig("plot2.png")
 plt.close()
@@ -122,16 +134,38 @@ print "delta U:"
 print deltaU
 Iunten=m*340+b
 print "I340:"
-print I340
+print Iunten
 Ioben=m*700+b
 print "I700:"
-print I700
+print Ioben
 mPro=(((Ioben/Iunten)-1)*100)/(deltaU/100)
 print "m in Prozent/100V"
 print mPro
 
+# Auswertung Teil D
 
-#plt.plot(x,x*m.n+b.n)
+# Laden der Werte
+t,n=loadtxt("dataD.txt", unpack='true')
+
+# Berechnung/Umformung der Werte
+sigman = n**(0.5)
+sigmaI = sigman/t
+I = n/t
+sigmaIrel = sigmaI*100/I
+
+# Intensitaet mit Fehler speichern:
+intens=array([ufloat(I[i],sigmaI[i]) for i in range(3)])
+
+# Zweite Tabelle generieren:
+data=array([n,t,intens,sigmaIrel]).T
+print make_LaTeX_table(data,[r'N', r't[s]', r'$I\left[\frac{1}{s}\right]$', r'$\sigma_{I,rel}$[\%]'], flip= 'false', onedim = 'false')
+
+# Totzeitberechnung:
+T=(intens[0]+intens[2]-intens[1])/(2*intens[0]*intens[2])
+print "Auswertung Teil D:"
+print "T:"
+print T
+
 
 
 
