@@ -1,7 +1,7 @@
 '''
 Created on 16.04.2014
 
-@author: martin
+@author: julian
 '''
 from numpy import *
 from uncertainties import ufloat
@@ -166,7 +166,21 @@ print "Auswertung Teil D:"
 print "T:"
 print T
 
+# Auswertung Teil E:
 
+# Messwerte einlesen
+t, n, u, j,jfehler = loadtxt("dataE.txt", unpack=True)
+# Relevante Werte berechnen
+sigman = n**(0.5)
+sigmaI = sigman/t
+I = n/t
+intens=array([ufloat(I[i],sigmaI[i]) for i in range(20)])
+sigmaIrel = sigmaI*100/I
+strom=array([ufloat(j[i],jfehler[i]) for i in range(20)])
+sigmajrel = jfehler*100/j
+Q = ((strom*t)/intens) *10**(-9)
+print "Q"
+print Q
 
 
 
