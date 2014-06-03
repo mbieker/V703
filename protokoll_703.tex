@@ -60,13 +60,31 @@ Die Anzahl der Ladungsimulse bei gegebener Zeit und Quelleninensit\"at als Funkt
 Die, bei den Ionisationsvorg\"angen entstehenden, positiven Edelgasionen haben im Vergleich zu den Elektronen eine sehr große Masse. Daher wandern diese nur langsam zur Kathode. Durch die im Zylinder vorherrschende positive Ladungsdichte schirmt das Feld indes Anodendrahts ab. Aus diesem Grund k\"onnen f\"ur eine gewisse Zeit $T$ nach einem Impuls keine weiteren Teilchen erkannnt werden. Dieser Effekt wird als Totzeit bezeichnet. Erst nachdem alle positiven Ionen neutralisiert wurden, erreichen die Ladungsimpulse ihre volle St\"arke. Dieser Zeitraum heißt Erhohlungszeit $T_E$.
 
 \noindent
-Treffen die Edelgasionen auf den Kathodenzylinder lösen diese dort Elektronen aus der Metalloberfläche. Diese Elektronen können weitere Ionisations- und Endladungslawinen auslösen. Diese Nachtentladungen verfälschen das Messergebnis, da dann bei einem Ladungsimpuls nicht unterschieden werden kann, ob dieser von einem Teilchen oder von einem Elektron aus dem Kathodenmaterial ausgelöst wurde. Um die Entstehung solcher Nachentladungen zu verhindern, wird dem Gas im Zählrohr eine geringe Menge eines Alkohols hinzugefügt. Diese relativ großen Moleküle nehmen die Engergie der Ionen auf und wandeln diese in thermische Schwingungen um. Auf diese Weise können keine Elektronen aus der Metalloberfläche ausgelöst werden.
+Treffen die Edelgasionen auf den Kathodenzylinder lösen diese dort Elektronen aus der Metalloberfläche. Diese Elektronen können weitere Ionisations- und Endladungslawinen auslösen. Diese Nachentladungen verfälschen das Messergebnis, da dann bei einem Ladungsimpuls nicht unterschieden werden kann, ob dieser von einem Teilchen oder von einem Elektron aus dem Kathodenmaterial ausgelöst wurde. Um die Entstehung solcher Nachentladungen zu verhindern, wird dem Gas im Zählrohr eine geringe Menge eines Alkohols hinzugefügt. Diese relativ großen Moleküle nehmen die Energie der Ionen auf und wandeln diese in thermische Schwingungen um. Auf diese Weise können keine Elektronen aus der Metalloberfläche ausgelöst werden.
 \section{Durchführung}
-Der Versuch ist wie in Abbildung \ref{aufbau} gezeigt aufgebaut. 
+Der Versuch ist wie in Abbildung \ref{aufbau} gezeigt aufgebaut. Das Zählrohr ist an eine variable Spannungsquelle angeschlossen. In einen hochohmigen Widerstand werden die Ladungsimpulse in Spannungsimpulse gewandelt und über einen Kondensator ausgekoppelt. Diese Impulse werden dann einerseits verstärkt und gezählt und andererseits mit einem Oszilloskop sichtbar gemacht.
 \subsection{Aufnahme der Charakteristik}
-\subsection{Oszillographische Messung der Totzeit}
+Zur Aufnahme der Charakteristik wird ein $\beta$-Strahler vor dem Zählrohr angebracht und die Zählrate in Abhängigkeit von der Spannung gemessen. Dabei wird die Spannung von \SI{300}{\volt} bis \SI{700 }{\volt} in \SI{20}{\volt} variiert. Damit der relative Fehler der Messung unter \SI{1}{\percent} bleibt, wird der Messzeitraum
+\[
+\Delta t
+\]
+so gewählt, dass die Anzahl der gezählten Ereignisse
+\[
+N \geq \num{10000}
+\]
+ist. Zusätzlich wird mit einem Strommessgerät der durch das Zählrohr fließende Strom gemessen, um später die pro Teilchen freigesetzte Ladungsmenge zu bestimmen. 
+\subsection{Oszillographische Messungen}
+Zunächst sollen die Nachentladungen am Oszilloskop sichtbar gemacht werden. Dazu wird zunächst die Intensität der $\beta$-Quelle soweit gesenkt, dass die Wahrscheinlichkleit für zwei direkt aufeinander folgende Teilchen vernachlässigbar klein ist. Danach wird das Zählrohr einmal mit einer Spannung betrieben bei der Nachtentladungen unwahscheinlich sind. Danach wird die Zählrohrspannung auf ihr Maximum von \SI{700}{\volt} erhöht.
+
+\noindent
+Danach soll die Totzeit und die Erholungszeit mit Hilfe des Oszilloskops bestimmt werden. Dazu wird eine hohe Stahlintensität gewählt. Es ergibt sich ein Oszillogramm wie in Abbildung \ref{osszi}. Aus diesem können Totzeit und die Erholungszeit grob abgelesen werden.
 \subsection{Bestimmung der Totzeit mit der Zwei-Quellen-Methode}
-\subsection{Messung der pro Teilchen freigesetzten Ladungsmenge}
+Zur Bestimmung der Totzeit mit der Zwei-Quellen-Methode wird zunächst die Zählrate mit einer Quelle $N_1$ bestimmt. Danach wird eine zweite Quelle in den Versuchsaufbau eingebracht und die Zählrate beider Quellen $N_{1+2}$ ermittelt. Im Anschluss wird die erste Quelle entfernt und die Zählrate nur in Anwesenheit der zweiten Quelle $N_2$ gemessen. Die Totzeit $T$ ist dann durch 
+\[
+T \approx \frac{N_1 + N_2 - N_{1+2}}{2N_1N_2}
+\]
+gegeben.
+ 
 \section{Auswertung}
 \begin{table}
 \centering
