@@ -68,7 +68,12 @@ Der Versuch ist wie in Abbildung \ref{aufbau} gezeigt aufgebaut.
 \subsection{Bestimmung der Totzeit mit der Zwei-Quellen-Methode}
 \subsection{Messung der pro Teilchen freigesetzten Ladungsmenge}
 \section{Auswertung}
-\begin{table}
+Alle Fehler wurden mit python uncertainties errechnet.
+\subsection{Aufnahme der Charakteristik}
+Die gemessenen und errechneten Werte sind der Tabelle \ref{teil1} zu entnehmen. Gemessen wurde die Zählrate bei einer Spannung von $\SI{300}{\volt}$ bis $\SI{700}{\volt}$.
+
+
+\begin{table}[H]
 \centering
 \begin{tabular}{SSSSS}
 \toprule
@@ -97,26 +102,81 @@ Der Versuch ist wie in Abbildung \ref{aufbau} gezeigt aufgebaut.
 700.0 & 11642.0 & 200.0 & 58.2+-0.5 & 0.93\\
 \bottomrule
 \end{tabular}
-\label{}
+\label{teil1}
 \caption{Messdaten und Fehlerangabe}
 \end{table}
-
-
-\begin{table}
+\noindent
+Die gemessene Charakteristik ist in Abbildung \ref{plot1} zu sehen.
+\begin{figure}[H]
 \centering
-\begin{tabular}{SSSS}
+\includegraphics[scale=0.8]{plot1.png}
+\label{plot1}
+\end{figure}
+\noindent
+An diesem Plot lässt sich ablesen, dass sich das Plateaus zwischen $\SI{340}{\volt}$ und $\SI{700}{\volt}$ befindet. Im Bereich des Plateaus wird nun eine lineare Regression durchgeführt. Diese ist in Abbildung \ref{plot2} gezeigt.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{plot2.png}
+\label{plot2}
+\end{figure}
+Als Regressionsgerade ergibt sich
+\[
+I(U) = (0.0022\pm0.0011) \cdot U + (56.1\pm0.6).
+\]
+Um die Steigung des Plateaus in \% pro $\SI{100}{\volt}$ zu berechnen, sind folgende ermittelte Werte benötigt:
+\begin{itemize}
+\item $\Delta U = \SI{360}{\volt}$
+\item $I(340) = (56.8\pm0.7) \, \frac{1}{s}$
+\item $I(700) = (57.6\pm1.0) \, \frac{1}{s}$
+\end{itemize}
+Damit ergibt sich die Steigung zu
+\[
+m_I = (0.46\pm0.23) \, \frac{\%}{100\, V}.
+\]
+\subsection{Zeitlicher Abstand zwischen Primär- und Nachentladungsimpuls}
+Es werden am Oszilloskop die Werte
+\begin{itemize}
+\item $\SI{195+-1}{\micro\second}$
+\item $\SI{163+-1}{\micro\second}$
+\end{itemize}
+abgelesen.
+\subsection{Oszillographische Messung der Totzeit}
+Die Totzeit wurde am Oszillographen abgelesen:
+\[
+T_{t} = \SI{124+-30}{\micro\second}.
+\]
+Die Erholungszeit konnte nur grob abgeschätzt werden. Es ergab sich
+\[
+T_E \approx \SI{467+-30}{\micro\second}.
+\]
+\subsection{Bestimmung der Totzeit mit der Zwei-Quellen-Methode}
+Die gemessenen Werte der Zwei-Quellen-Methode sind in Tabelle \ref{tab4} eingetragen.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{SSSSS}
 \toprule
-{N} &{ t[s]} &{ $I\left[\frac{1}{s}\right]$} &{ $\sigma_{I,rel}$[\%] }\\
+{Quelle} & {N} &{ t[s]} &{ $I\left[\frac{1}{s}\right]$} &{ $\sigma_{I,rel}$[\%] }\\
 \midrule
-17483.0 & 200.0 & 87.4+-0.7 & 0.76\\
-20229.0 & 200.0 & 101.1+-0.7 & 0.70\\
-13280.0 & 1000.0 & 13.28+-0.12 & 0.87\\
+1 & 17483.0 & 200.0 & 87.4+-0.7 & 0.76\\
+1/2& 20229.0 & 200.0 & 101.1+-0.7 & 0.70\\
+2 & 13280.0 & 1000.0 & 13.28+-0.12 & 0.87\\
 \bottomrule
 \end{tabular}
-\label{}
-\caption{}
+\label{tab4}
+\caption{Zweiquellenmethode}
 \end{table}
 
+\noindent
+Als Wert für die Totzeit ergibt sich
+\[
+T_{t} = \SI{-0.0002+-0.0004}{\second}.
+\]
+Dieser Wert ist negativ, weil die gemeinsame Messung der Quellen eine höhere Intensität ergab als beide Einzelmessungen addiert. Im Rahmen der Unsicherheiten ist ein positiver Wert jedoch generell möglich. Der hier gemessene Wert hat jedoch keine Aussagekraft.
+\subsection{Messung der pro Teilchen freigesetzten Ladungsmenge}
+Die Messwerte, die zur Bestimmung der Ladung nötig sind, sowie die Ergebnisse sind in Tabelle 3 abgebildet.
+
+\section{Diskussion}
 
 \section{Quellen}
 \begin{enumerate}[{[}1{]}]

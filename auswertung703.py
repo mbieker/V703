@@ -117,6 +117,11 @@ sigmaI2=sigmaI[2:]
 # Lineare Regression
 m,b = lin_reg(u2,I2)
 
+print "M:"
+print m
+print "B:"
+print b
+
 plt.xlim(335,710)
 plt.xlabel('Zaehlrohrspannung U[V]')
 plt.ylabel('Impulsrate I [1/s]')
@@ -176,15 +181,26 @@ sigmaI = sigman/t
 I = n/t
 intens=array([ufloat(I[i],sigmaI[i]) for i in range(20)])
 sigmaIrel = sigmaI*100/I
-strom=array([ufloat(j[i],jfehler[i]) for i in range(20)])
+strom1=array([ufloat(j[i],jfehler[i]) for i in range(20)])
+strom=strom1
 sigmajrel = jfehler*100/j
-Q = ((strom*t)/intens) *10**(-9)
+Q = ((strom*t)/intens) *10**(-6)
 print "Q"
 print Q
 
+# Plotten
 
-
-
+ladung=array([Q[i].n] for i in range(20))
+print "ladung"
+print ladung
+'''
+plt.xlabel('Zaehlrohrspannung U[V]')
+plt.ylabel('Ladung [C]')
+plt.plot(u,ladung,'x')
+plt.show()
+plt.savefig("plot3.png")
+plt.close()
+'''
 
 """  
 
