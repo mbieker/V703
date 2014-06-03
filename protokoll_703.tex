@@ -161,6 +161,7 @@ Die gemessene Charakteristik ist in Abbildung \ref{plot1} zu sehen.
 \centering
 \includegraphics[scale=0.8]{plot1.png}
 \label{plot1}
+\caption{Messwerte}
 \end{figure}
 \noindent
 An diesem Plot lässt sich ablesen, dass sich das Plateaus zwischen $\SI{340}{\volt}$ und $\SI{700}{\volt}$ befindet. Im Bereich des Plateaus wird nun eine lineare Regression durchgeführt. Diese ist in Abbildung \ref{plot2} gezeigt.
@@ -168,6 +169,7 @@ An diesem Plot lässt sich ablesen, dass sich das Plateaus zwischen $\SI{340}{\v
 \centering
 \includegraphics[scale=0.8]{plot2.png}
 \label{plot2}
+\caption{Lineare Regression}
 \end{figure}
 Als Regressionsgerade ergibt sich
 \[
@@ -200,7 +202,7 @@ Die Erholungszeit konnte nur grob abgeschätzt werden. Es ergab sich
 T_E \approx \SI{467+-30}{\micro\second}.
 \]
 \subsection{Bestimmung der Totzeit mit der Zwei-Quellen-Methode}
-Die gemessenen Werte der Zwei-Quellen-Methode sind in Tabelle \ref{tab4} eingetragen.
+Die gemessenen Werte der Zwei-Quellen-Methode sind in Tabelle \ref{blabla2} eingetragen.
 
 \begin{table}[H]
 \centering
@@ -208,12 +210,12 @@ Die gemessenen Werte der Zwei-Quellen-Methode sind in Tabelle \ref{tab4} eingetr
 \toprule
 {Quelle} & {N} &{ t[s]} &{ $I\left[\frac{1}{s}\right]$} &{ $\sigma_{I,rel}$[\%] }\\
 \midrule
-1 & 17483.0 & 200.0 & 87.4+-0.7 & 0.76\\
-1/2& 20229.0 & 200.0 & 101.1+-0.7 & 0.70\\
-2 & 13280.0 & 1000.0 & 13.28+-0.12 & 0.87\\
+{$N_1$} & 17483.0 & 200.0 & 87.4+-0.7 & 0.76\\
+{$N_{1+2}$}& 20229.0 & 200.0 & 101.1+-0.7 & 0.70\\
+{$N_2$} & 13280.0 & 1000.0 & 13.28+-0.12 & 0.87\\
 \bottomrule
 \end{tabular}
-\label{tab4}
+\label{blabla2}
 \caption{Zweiquellenmethode}
 \end{table}
 
@@ -226,9 +228,49 @@ Dieser Wert ist negativ, weil die gemeinsame Messung der Quellen eine höhere In
 \subsection{Messung der pro Teilchen freigesetzten Ladungsmenge}
 Die Messwerte, die zur Bestimmung der Ladung nötig sind, sowie die Ergebnisse sind in Tabelle 3 abgebildet.
 
+\begin{table}[H]
+\centering
+\begin{tabular}{ccccccc}
+\toprule
+{U[V]} &{$ I[\mu A]$} &{ N} &{ t[s]} &{ $I\left[\frac{1}{s}\right]$} & $\sigma_{I,rel} [\%]$ &$ Q[10^{-7}C]$ \\
+\midrule
+320.0 & $0.05\pm0.05$ & 13617.0 & 250.0 & $54.5\pm0.5$ & 0.86 & $2.3\pm2.3$\\
+340.0 & $0.05\pm0.05$ & 11192.0 & 200.0 & $56.0\pm0.5$ & 0.95 & $1.8\pm1.8$\\
+360.0 & $0.10\pm0.05$ & 11231.0 & 200.0 & $56.2\pm0.5$ & 0.94 & $3.6\pm1.8$\\
+380.0 & $0.15\pm0.05$ & 11601.0 & 200.0 & $58.0\pm0.5$ & 0.93 & $5.2\pm1.7$\\
+400.0 & $0.17\pm0.05$ & 11410.0 & 200.0 & $57.0\pm0.5$ & 0.94 & $6.0\pm1.8$\\
+420.0 & $0.19\pm0.05$ & 11459.0 & 200.0 & $57.3\pm0.5$ & 0.93 & $6.6\pm1.7$\\
+440.0 & $0.20\pm0.05$ & 11496.0 & 200.0 & $57.5\pm0.5$ & 0.93 & $7.0\pm1.7$\\
+460.0 & $0.20\pm0.05$ & 11433.0 & 200.0 & $57.2\pm0.5$ & 0.94 & $7.0\pm1.8$\\
+480.0 & $0.20\pm0.05$ & 11379.0 & 200.0 & $56.9\pm0.5$ & 0.94 & $7.0\pm1.8$\\
+500.0 & $0.22\pm0.05$ & 11457.0 & 200.0 & $57.3\pm0.5$ & 0.93 & $7.7\pm1.7$\\
+520.0 & $0.23\pm0.05$ & 11437.0 & 200.0 & $57.2\pm0.5$ & 0.94 & $8.0\pm1.8$\\
+540.0 & $0.24\pm0.05$ & 11376.0 & 200.0 & $56.9\pm0.5$ & 0.94 & $8.4\pm1.8$\\
+560.0 & $0.25\pm0.05$ & 11564.0 & 200.0 & $57.8\pm0.5$ & 0.93 & $8.6\pm1.7$\\
+580.0 & $0.30\pm0.05$ & 11620.0 & 200.0 & $58.1\pm0.5$ & 0.93 & $1.03\pm0.17$\\
+600.0 & $0.35\pm0.05$ & 11333.0 & 200.0 & $56.7\pm0.5$ & 0.94 & $1.24\pm0.18$\\
+620.0 & $0.40\pm0.05$ & 11382.0 & 200.0 & $56.9\pm0.5$ & 0.94 & $1.41\pm0.18$\\
+640.0 & $0.40\pm0.05$ & 11449.0 & 200.0 & $57.2\pm0.5$ & 0.93 & $1.40\pm0.18$\\
+660.0 & $0.40\pm0.05$ & 11414.0 & 200.0 & $57.1\pm0.5$ & 0.94 & $1.40\pm0.18$\\
+680.0 & $0.45\pm0.05$ & 11507.0 & 200.0 & $57.5\pm0.5$ & 0.93 & $1.56\pm0.17$\\
+700.0 & $0.50\pm0.05$ & 11642.0 & 200.0 & $58.2\pm0.5$ & 0.93 & $1.72\pm0.17$\\
+\bottomrule
+\end{tabular}
+\label{tab3}
+\caption{Messung der pro Teilchen freigesetzten Ladungsmenge}
+\end{table}
+Der gemessene Strom in Abhängigkeit von der Betriebsspannung ist in Abbildung \ref{plot3} zu sehen.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{plot3.png}
+\caption{Messwerte}
+\label{plot3}
+\end{figure}
+\noindent
+Diese Messwerte sind so fehlerbehaftet, dass eine weitere Auswertung zwecklos ist. Es ergäbe sich ein linearer Zusammenhang.
 \section{Diskussion}
 Auffällig ist die hohe statistische Abweichung der Messwerte. Die für die lineare Regression verwendeten Werte weisen hohe Schwankungen auf.
-Alle vom Oszilloskop abgelesenen Werte sind sehr ungenau. Sie konnten nur geschätzt werden. Die Messung mit der Zwei-Quellen-Methode hat nicht funktioniert. Einen Grund hierfür könnte die geringe Aktivität der radioaktiven Proben sein, da so kaum Energie-Emissionen während der Totzeiten auftreten.
+Alle vom Oszilloskop abgelesenen Werte sind sehr ungenau. Sie konnten nur geschätzt werden. Die Messung mit der Zwei-Quellen-Methode hat nicht funktioniert. Einen Grund hierfür könnte die geringe Aktivität der radioaktiven Proben sein, da so kaum Energie-Emissionen während der Totzeiten auftreten. Die letzte Messung war leider mit einem sehr großen Fehler behaftet, da die Empfindlichkeit des Amperemeters kaum geeignet war.
 
 \section{Quellen}
 \begin{enumerate}[{[}1{]}]

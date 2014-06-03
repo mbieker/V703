@@ -190,17 +190,28 @@ print Q
 
 # Plotten
 
-ladung=array([Q[i].n] for i in range(20))
+ladung=array([Q[i].nominal_value for i in range(20)])
 print "ladung"
 print ladung
-'''
+
+plt.xlabel('Zaehlrohrspannung U[V]')
+plt.ylabel('Strom I $[10^{-6}A]$')
+plt.plot(u,j,'x')
+plt.show()
+plt.savefig("plot3.png")
+plt.close()
+
 plt.xlabel('Zaehlrohrspannung U[V]')
 plt.ylabel('Ladung [C]')
 plt.plot(u,ladung,'x')
 plt.show()
-plt.savefig("plot3.png")
+plt.savefig("plot4.png")
 plt.close()
-'''
+
+# Dritte Tabelle erstellen
+print "Tabelle 3:"
+data=array([u,strom,n,t,intens,sigmaIrel,Q]).T
+print make_LaTeX_table(data,[r'U[V]',r'I[\mikro A]', r'N', r't[s]', r'$I\left[\frac{1}{s}\right]$', r'$\sigma_{I,rel}$[\%]', r'Q[C]'], flip= 'false', onedim = 'false')
 
 """  
 
